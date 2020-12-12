@@ -59,22 +59,18 @@ def part2(numbers):
 
 def find_precesoors(val, pointer, numbers):
         result = []
-        # result = 0
         pointer = pointer - 1
         while(val - numbers[pointer] <= 3 and pointer >= 0):
             result.append(pointer)
-            # result = result + 1
             pointer = pointer - 1
         return result
 
 
 def part2dp(numbers):
-
     pointer = 1
     dp = [1]
     while(pointer < len(numbers)):
         result = find_precesoors(numbers[pointer], pointer, numbers)
-        print(result)
         dp.append(sum(map(lambda a: dp[a], result)))
         pointer = pointer + 1
     
