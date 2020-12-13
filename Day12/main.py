@@ -50,8 +50,6 @@ class Ship:
             self.posy = self.posy + dy
             print(self.posx, self.posy)
 
-
-
     def get_direction(self, degrees):
         degrees = degrees % 360
         if(degrees == 0):
